@@ -3,87 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog with Firebase</title>
-</head>
-<body>
-    <h1>Simple Blog</h1>
-    
-    <form id="post-form">
-        <label for="author">Author:</label><br>
-        <input type="text" id="author" name="author" required><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" required></textarea><br>
-        <button type="submit">Post Message</button>
-    </form>
-
-    <h2>Messages:</h2>
-    <div id="messages"></div>
-
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.15.0/firebase-app-compat.js"></script>
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.15.0/firebase-database-compat.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            databaseURL: "YOUR_DATABASE_URL",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Get a reference to the database service
-        const database = firebase.database();
-
-        const form = document.getElementById('post-form');
-        const messagesDiv = document.getElementById('messages');
-
-        // Display messages
-        function displayMessages(messages) {
-            messagesDiv.innerHTML = '';
-            for (let key in messages) {
-                const msg = messages[key];
-                messagesDiv.innerHTML += `
-                    <div>
-                        <strong>${msg.author}</strong>
-                        <p>${msg.message}</p>
-                        <small>${msg.date}</small>
-                    </div>
-                    <hr>
-                `;
-            }
+    <title>L3TRUST - Aircraft Marketplace</title>
+    <style>
+        /* General page styling */
+        body {
+            background-color: #008080;
+            color: #000000;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 10px;
+            font-size: 14px;
         }
 
-        // Handle form submission
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const author = document.getElementById('author').value;
-            const message = document.getElementById('message').value;
-            const date = new Date().toLocaleString();
+        /* Window container */
+        .window {
+            background-color: #C0C0C0;
+            border: 2px solid #808080;
+            border-top-color: #FFFFFF;
+            border-left-color: #FFFFFF;
+            padding: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-            // Push the new message to Firebase
-            database.ref('messages').push({
-                author: author,
-                message: message,
-                date: date
+        /* Title bar */
+        .title-bar {
+            background: linear-gradient(to right, #000080, #0000FF);
+            color: white;
+            font-family: 'Courier New', monospace;
+            padding: 6px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Menu bar */
+        .menu-bar {
+            background-color: #C0C0C0;
+            border-bottom: 1px solid #808080;
+            padding: 3px;
+        }
+
+        /* Menu items (links) */
+        .menu-item {
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item a {
+            color: #000000;
+            text-decoration: none; /* No underline by default */
+        }
+
+        .menu-item a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Aircraft listing styling */
+        .aircraft-listing {
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .aircraft-item {
+            border-bottom: 1px solid #000000;
+            padding: 10px 0;
+        }
+
+        .aircraft-item:last-child {
+            border-bottom: none;
+        }
+
+        .aircraft-name {
+            font-weight: bold;
+            color: #000080;
+        }
+
+        .aircraft-details {
+            margin-top: 5px;
+        }
+
+        .aircraft-price {
+            color: #008000;
+            font-weight: bold;
+        }
+
+        /* Carousel styling */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 300px; /* Fixed height for all images */
+            object-fit: cover; /* Ensure the image covers the fixed size */
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel-nav.prev {
+            left: 10px;
+        }
+
+        .carousel-nav.next {
+            right: 10px;
+        }
+
+        /* Retro button styling */
+        .retro-button {
+            display: inline-block;
+            
+            font-family: 'Courier New', monospace;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: linear-gradient(to right,#0000FF, #000080);
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .retro-button:hover {
+            background-color: #FFD700;
+        }
+
+        /* Additional details styling */
+        .additional-details {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .additional-details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">L3TRUST - Aircraft Marketplace</div>
+
+        <div class="menu-bar">
+            <div class="menu-item"><a href="#">Home</a></div>
+            <div class="menu-item"><a href="#">Listings</a></div>
+            <div class="menu-item"><a href="#">Help</a></div>
+        </div>
+
+        <!-- Aircraft listings -->
+        <div class="aircraft-listing">
+            <div class="aircraft-item">
+                <div class="aircraft-name">2010 BEECHCRAFT PREMIER IA</div>
+                <p class="aircraft-price">Price: USD $2,400,000</p>
+                <div class="carousel">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622028&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUwkefTYPcFWHpFIKEKoHFrd5pYyZ5ljqXc%3d" alt="Cessna 172 Skyhawk 1" class="active">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622006&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUxICk0KD4lprjbt%2bnuSSCoMJ5v36j%2bvI%2fc%3d" alt="Cessna 172 Skyhawk 2">
+                    <img src="https://media.sandhills.com/img.axd?id=9040621992&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=%2bw%2bdkLu061O6lZiLEGDoLKt3WLCODyZGCIUUJMApNHY%3d" alt="Cessna 172 Skyhawk 3">
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="aircraft-details">
+                    <p><b> Manufacturer:</b>  BEECHCRAFT</p>
+                    <p><b> Year:</b> 2010</p>
+                    <p><b> Model:</b> PREMIER IA</p>
+                    <p><b> Serial Number:</b> RB-277</p>
+                    <p><b> Registration:</b> N99MN</p>
+                    <p><b> Aircraft Locaiton:</b> Winston-Salem, North Carolina</p>
+                    <p><b> Description:</b> Recent Windshields, A & B Inspections by Textron Service Center GSO January 2025, TAP Elite, Electronic Charts, XM Weather and much more.  Call today to find out more about this excellent Premier IA.</p>
+                </div>
+                <button class="retro-button" onclick="toggleDetails('cessna-172-details')">More Details</button>
+                <div id="cessna-172-details" class="additional-details">
+                    <p>Engine Type: Lycoming IO-360-L2A</p>
+                    <p>Cruise Speed: 122 knots</p>
+                    <p>Range: 640 nautical miles</p>
+                    <p>Seats: 4</p>
+                </div>
+            </div>
+            <!-- Add more aircraft items as needed -->
+        </div>
+    </div>
+
+    <script>
+        // Carousel functionality
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === index);
+                });
+            }
+
+            carousel.querySelector('.carousel-nav.prev').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
             });
 
-            form.reset();
+            carousel.querySelector('.carousel-nav.next').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
         });
 
-        // Listen for changes in the messages
-        database.ref('messages').on('value', (snapshot) => {
-            const messages = snapshot.val();
-            displayMessages(messages);
-        });
+        // Toggle additional details functionality
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
     </script>
 </body>
 </html>
