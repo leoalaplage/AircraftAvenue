@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SQUAWKER - List Your Aircraft</title>
+    <style>
+        /* General page styling */
+        body {
+            background-color: #008080;
+            color: #000000;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        /* Window container */
+        .window {
+            background-color: #C0C0C0;
+            border: 2px solid #808080;
+            border-top-color: #FFFFFF;
+            border-left-color: #FFFFFF;
+            padding: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Title bar */
+        .title-bar {
+            background: linear-gradient(to right, #000080, #0000FF);
+            color: white;
+            font-family: 'Courier New', monospace;
+            padding: 6px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Menu bar */
+        .menu-bar {
+            background-color: #C0C0C0;
+            border-bottom: 1px solid #808080;
+            padding: 3px;
+        }
+
+        /* Menu items (links) */
+        .menu-item {
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item a {
+            color: #000000;
+            text-decoration: none; /* No underline by default */
+        }
+
+        .menu-item a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Form styling */
+        .listing-form {
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #000080;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Retro button styling */
+        .retro-button {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: linear-gradient(to right,#0000FF, #000080);
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .retro-button:hover {
+            background-color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">THE SQUAWKER - List Your Aircraft</div>
+
+        <div class="menu-bar">
+            <div class="menu-item"><a href="index.html">Home</a></div>
+            <div class="menu-item"><a href="#">Listings</a></div>
+            <div class="menu-item"><a href="#">Help</a></div>
+        </div>
+
+        <!-- Listing form -->
+        <div class="listing-form">
+            <form id="aircraftForm">
+                <div class="form-group">
+                    <label for="manufacturer">Manufacturer:</label>
+                    <input type="text" id="manufacturer" name="manufacturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" name="year" required>
+                </div>
+                <div class="form-group">
+                    <label for="model">Model:</label>
+                    <input type="text" id="model" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label for="serialNumber">Serial Number:</label>
+                    <input type="text" id="serialNumber" name="serialNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="registration">Registration:</label>
+                    <input type="text" id="registration" name="registration" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Aircraft Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price (USD):</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <div class="form-group">
+                    <label for="images">Images:</label>
+                    <input type="file" id="images" name="images" accept="image/*" multiple>
+                </div>
+                <button type="submit" class="retro-button">Submit Listing</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form submission functionality
+        document.getElementById('aircraftForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                if (key !== 'images') {
+                    data[key] = value;
+                }
+            });
+
+            const subject = `New Aircraft Listing: ${data.manufacturer} ${data.model}`;
+            const body = `Manufacturer: ${data.manufacturer}\nYear: ${data.year}\nModel: ${data.model}\nSerial Number: ${data.serialNumber}\nRegistration: ${data.registration}\nLocation: ${data.location}\nDescription: ${data.description}\nPrice: $${data.price}\n\nPlease attach the selected images to this email.`;
+
+            window.location.href = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    </script>
+</body>
+</html>
