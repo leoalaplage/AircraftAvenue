@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>THE SQUAWKER - List Your Aircraft</title>
     <style>
         /* General page styling */
@@ -148,60 +148,45 @@
                     <label for="price">Price (USD):</label>
                     <input type="number" id="price" name="price" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="Total Time">Total Time:</label>
-                    <input type="number" id="Total Time" name="Total Time" required>
+                    <label for="totalTime">Total Time:</label>
+                    <input type="number" id="totalTime" name="totalTime" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="Total Landings">Total Landings:</label>
-                    <input type="number" id="Total Landings" name="Total Landings" required>
+                    <label for="totalLandings">Total Landings:</label>
+                    <input type="number" id="totalLandings" name="totalLandings" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="Engine 1 Time">Engine 1 Time (SNEW):</label>
-                    <input type="number" id="Engine 1 Time" name="Engine 1 Time" required>
+                    <label for="engine1Time">Engine 1 Time (SNEW):</label>
+                    <input type="number" id="engine1Time" name="engine1Time" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="Engine 2 Time">Engine 2 Time (SNEW):</label>
-                    <input type="number" id="Engine 2 Time" name="Engine 2 Time" required>
+                    <label for="engine2Time">Engine 2 Time (SNEW):</label>
+                    <input type="number" id="engine2Time" name="engine2Time" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="Engine 1 Cycles">Engine 1 Cycles (SNEW):</label>
-                    <input type="number" id="Engine 1 Cycles" name="Engine 1 Cycles" required>
+                    <label for="engine1Cycles">Engine 1 Cycles (SNEW):</label>
+                    <input type="number" id="engine1Cycles" name="engine1Cycles" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="Engine 2 Cycles">Engine 2 Cycles (SNEW):</label>
-                    <input type="number" id="Engine 2 Cycles" name="Engine 2 Cycles" required>
+                    <label for="engine2Cycles">Engine 2 Cycles (SNEW):</label>
+                    <input type="number" id="engine2Cycles" name="engine2Cycles" required>
                 </div>
-                
                 <div class="form-group">
                     <label for="avionics">Avionics/Radios:</label>
                     <textarea id="avionics" name="avionics" rows="4" required></textarea>
                 </div>
-                
                 <div class="form-group">
-                    <label for="equipment">Additional Equipment :</label>
+                    <label for="equipment">Additional Equipment:</label>
                     <textarea id="equipment" name="equipment" rows="4" required></textarea>
                 </div>
-                
                 <div class="form-group">
                     <label for="interior">Interior Notes:</label>
                     <textarea id="interior" name="interior" rows="4" required></textarea>
                 </div>
-                
                 <div class="form-group">
                     <label for="inspection">Inspection Status:</label>
                     <textarea id="inspection" name="inspection" rows="4" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="price">Price (USD):</label>
-                    <input type="number" id="price" name="price" required>
                 </div>
                 <div class="form-group">
                     <label for="images">Images:</label>
@@ -226,7 +211,7 @@
             });
 
             const subject = `New Aircraft Listing: ${data.manufacturer} ${data.model}`;
-            const body = `Manufacturer: ${data.manufacturer}\nYear: ${data.year}\nModel: ${data.model}\nSerial Number: ${data.serialNumber}\nRegistration: ${data.registration}\nLocation: ${data.location}\nDescription: ${data.description}\nPrice: $${data.price}\n\nPlease attach the selected images to this email.`;
+            const body = `Manufacturer: ${data.manufacturer}\nYear: ${data.year}\nModel: ${data.model}\nSerial Number: ${data.serialNumber}\nRegistration: ${data.registration}\nLocation: ${data.location}\nDescription: ${data.description}\nPrice: $${data.price}\nTotal Time: ${data.totalTime}\nTotal Landings: ${data.totalLandings}\nEngine 1 Time (SNEW): ${data.engine1Time}\nEngine 2 Time (SNEW): ${data.engine2Time}\nEngine 1 Cycles (SNEW): ${data.engine1Cycles}\nEngine 2 Cycles (SNEW): ${data.engine2Cycles}\nAvionics/Radios: ${data.avionics}\nAdditional Equipment: ${data.equipment}\nInterior Notes: ${data.interior}\nInspection Status: ${data.inspection}\n\nPlease attach the selected images to this email.`;
 
             window.location.href = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
