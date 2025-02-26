@@ -407,6 +407,35 @@
             border-right-color: #FFFFFF;
             transform: translateY(1px);
         }
+        
+        .sort-price-button {
+            font-family: 'arial', monospace;
+            padding: 5px 10px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            color: #000000;
+            background-color: #C0C0C0;
+            border: 2px outset #FFFFFF;
+            border-bottom-color: #808080;
+            border-right-color: #808080;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+            float: right;
+        }
+
+        .sort-price-button:hover {
+            background-color: #D0D0D0;
+        }
+
+        .sort-price-button:active {
+            border-style: inset;
+            border-color: #808080;
+            border-bottom-color: #FFFFFF;
+            border-right-color: #FFFFFF;
+            transform: translateY(1px);
+        }
     </style>
 </head>
 <body>
@@ -421,6 +450,9 @@
 
          <!-- Toggle Filter Button -->
         <button class="toggle-filter-button" onclick="toggleFilterSection()">Filters</button>
+
+<!-- Ajoutez ce bouton dans votre HTML, par exemple sous le bouton de filtre -->
+<button class="sort-price-button" onclick="sortByPrice()">Sort by Price</button>
 
         <!-- Filter Box -->
         <div class="filter-box" id="filter-box">
@@ -863,6 +895,27 @@ document.querySelectorAll('.carousel img').forEach(img => {
         });
     });
 });
+
+
+function sortByPrice() {
+    const aircraftListing = document.querySelector('.aircraft-listing');
+    const items = Array.from(aircraftListing.querySelectorAll('.aircraft-item'));
+    const isAscending = aircraftListing.classList.contains('sort-ascending');
+
+    items.sort((a, b) => {
+        const priceA = parseFloat(a.getAttribute('data-price').replace(/[^\d.]/g, ''));
+        const priceB = parseFloat(b.getAttribute('data-price').replace(/[^\d.]/g, ''));
+        return isAscending ? priceA - priceB : priceB - priceA;
+    });
+
+    // Re-attach sorted items to the DOM
+    items.forEach(item => aircraftListing.appendChild(item));
+
+    // Toggle the sorting order
+    aircraftListing.classList.toggle('sort-ascending', !isAscending);
+    document.querySelector('.sort-price-button').textContent = isAscending ? 'Sort by Price (Low to High)' : 'Sort by Price (High to Low)';
+}
+
 </script>
 
 </body>
