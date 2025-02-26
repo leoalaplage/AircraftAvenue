@@ -101,54 +101,111 @@
             margin: 20px auto;
         }
 
-        .carousel img {
-            width: 100%;
-            height: 300px; /* Fixed height for all images */
-            object-fit: cover; /* Ensure the image covers the fixed size */
-            display: none;
-        }
+/* Windows XP-style inset image frame */
+.carousel img {
+    width: 100%;
+    height: 300px; /* Fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the fixed size */
+    display: none;
+    border: 3px inset #f0f0f0; /* Inset border for a recessed look */
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), /* Inner shadow for depth */
+                inset -2px -2px 4px rgba(255, 255, 255, 0.3); /* Inner highlight for inset look */
+    background-color: #C0C0C0; /* Light background color */
+}
 
-        .carousel img.active {
-            display: block;
-        }
+.carousel img.active {
+    display: block;
+}
 
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
 
-        .carousel-nav.prev {
-            left: 10px;
-        }
 
-        .carousel-nav.next {
-            right: 10px;
-        }
+/* Retro styling for carousel navigation buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: 2px outset #C0C0C0; /* Outset border for a 3D effect */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
 
-        /* Retro button styling */
-        .retro-button {
-            display: inline-block;
+.carousel-nav.prev {
+    left: 10px;
+}
 
-            font-family: 'Courier New', monospace;
-            padding: 10px 20px;
-            font-size: 14px;
-            text-align: center;
-            text-decoration: none;
-            color: #FFFFFF;
-            background: linear-gradient(to right,#0000FF, #000080);
-            cursor: pointer;
-            margin-top: 10px;
-        }
+.carousel-nav.next {
+    right: 10px;
+}
 
-        .retro-button:hover {
-            background-color: #FFD700;
-        }
+/* Retro styling for the close button */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border: 2px outset #C0C0C0; /* Outset border for a 3D effect */
+    padding: 5px 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    z-index: 1001; /* Ensure the button is above the overlay */
+}
+
+/* Full-screen overlay styling */
+.fullscreen-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with some transparency */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid #C0C0C0;
+}
+
+/* Optional: Add a close button */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Retro button styling */
+.retro-button {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: linear-gradient(to right, #000080, #0000FF); /* Matching gradient */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.retro-button:hover {
+    background-color: #FFD700; /* Gold background on hover */
+}
+
 
         /* Additional details styling */
         .additional-details {
@@ -433,5 +490,48 @@ The information contained herein was obtained from the aircraft permanent record
             details.style.display = details.style.display === 'block' ? 'none' : 'block';
         }
     </script>
+    
+    <script>
+document.querySelectorAll('.carousel img').forEach(img => {
+    img.addEventListener('click', function() {
+        // Create the full-screen overlay if it doesn't exist
+        let overlay = document.querySelector('.fullscreen-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'fullscreen-overlay';
+            document.body.appendChild(overlay);
+
+            // Add a close button
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close-button';
+            closeButton.innerHTML = '&times;';
+            overlay.appendChild(closeButton);
+
+            // Close the overlay when the close button is clicked
+            closeButton.addEventListener('click', function() {
+                overlay.style.display = 'none';
+                overlay.innerHTML = ''; // Clear the image
+            });
+        }
+
+        // Display the clicked image in the overlay
+        overlay.innerHTML = `<img src="${this.src}" alt="Fullscreen Image">`;
+        overlay.style.display = 'flex';
+
+        // Add the close button back to the overlay
+        const closeButton = document.createElement('span');
+        closeButton.className = 'close-button';
+        closeButton.innerHTML = '&times;';
+        overlay.appendChild(closeButton);
+
+        // Close the overlay when the close button is clicked
+        closeButton.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            overlay.innerHTML = ''; // Clear the image
+        });
+    });
+});
+</script>
+
 </body>
 </html>
