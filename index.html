@@ -117,8 +117,6 @@
     display: block;
 }
 
-
-
 /* Retro styling for carousel navigation buttons */
 .carousel-nav {
     position: absolute;
@@ -186,26 +184,35 @@
     cursor: pointer;
 }
 
-
 /* Retro button styling */
 .retro-button {
-    display: inline-block;
     font-family: 'Courier New', monospace;
-    padding: 10px 20px;
-    font-size: 14px;
-    text-align: center;
-    text-decoration: none;
-    color: #FFFFFF;
-    background: linear-gradient(to right, #000080, #0000FF); /* Matching gradient */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-    cursor: pointer;
-    margin-top: 10px;
-}
+            padding: 5px 10px;
+            font-size: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: linear-gradient(to right, #000080, #0000FF);
+            border: 2px outset #FFFFFF;
+            border-bottom-color: #808080;
+            border-right-color: #808080;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
 
 .retro-button:hover {
-    background-color: #FFD700; /* Gold background on hover */
-}
+    background: linear-gradient(to right, #0000A0, #2020FF);
+        }
 
+.retro-button:active {
+            border-style: inset;
+            border-color: #808080;
+            border-bottom-color: #FFFFFF;
+            border-right-color: #FFFFFF;
+            transform: translateY(1px);
+        }
 
         /* Additional details styling */
         .additional-details {
@@ -215,6 +222,188 @@
 
         .additional-details p {
             margin: 10px 0;
+        }
+
+       /* Filter box styling */
+        .filter-box {
+            background-color: #C0C0C0;
+            border: 2px solid #808080;
+            border-top-color: #FFFFFF;
+            border-left-color: #FFFFFF;
+            margin-top: 15px;
+            padding: 10px;
+            display: none;
+        }
+
+        .filter-header {
+            background: linear-gradient(to right, #000080, #0000FF);
+            color: white;
+            font-family: 'Courier New', monospace;
+            padding: 4px 6px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .filter-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .filter-box td {
+            padding: 6px;
+            vertical-align: top;
+        }
+
+        .filter-group {
+            margin-bottom: 10px;
+            background-color: #FFFFFF;
+            border: 1px solid #808080;
+            padding: 8px;
+        }
+
+        .filter-box label {
+            font-weight: bold;
+            color: #000080;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .filter-box input[type="checkbox"] {
+            margin-right: 5px;
+            border: 1px solid #808080;
+            background-color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .filter-box input[type="checkbox"]:focus {
+            outline: 1px dotted #000000;
+        }
+
+        .filter-box select {
+            font-family: 'Courier New', monospace;
+            padding: 3px;
+            border: 2px inset #C0C0C0;
+            background-color: #FFFFFF;
+            color: #000000;
+            margin-top: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .filter-box input[type="text"],
+        .filter-box input[type="number"] {
+            font-family: 'Courier New', monospace;
+            padding: 3px 5px;
+            border: 2px inset #C0C0C0;
+            background-color: #FFFFFF;
+            color: #000000;
+            width: calc(100% - 12px);
+        }
+
+        .range-inputs {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .range-inputs input {
+            width: calc(50% - 12px);
+        }
+
+        .range-separator {
+            color: #000080;
+            font-weight: bold;
+        }
+
+        /* Toggle Filter Button */
+        .toggle-filter-button {
+            font-family: 'Courier New', monospace;
+            padding: 5px 10px;
+            font-size: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: linear-gradient(to right, #000080, #0000FF);
+            border: 2px outset #FFFFFF;
+            border-bottom-color: #808080;
+            border-right-color: #808080;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .toggle-filter-button:hover {
+            background: linear-gradient(to right, #0000A0, #2020FF);
+        }
+
+        .toggle-filter-button:active {
+            border-style: inset;
+            border-color: #808080;
+            border-bottom-color: #FFFFFF;
+            border-right-color: #FFFFFF;
+            transform: translateY(1px);
+        }
+
+        /* Apply Filters Button */
+        .apply-filters-button {
+            font-family: 'Courier New', monospace;
+            padding: 8px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: linear-gradient(to right, #000080, #0000FF);
+            border: 2px outset #FFFFFF;
+            border-bottom-color: #808080;
+            border-right-color: #808080;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            margin-top: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .apply-filters-button:hover {
+            background: linear-gradient(to right, #0000A0, #2020FF);
+        }
+
+        .apply-filters-button:active {
+            border-style: inset;
+            border-color: #808080;
+            border-bottom-color: #FFFFFF;
+            border-right-color: #FFFFFF;
+            transform: translateY(1px);
+        }
+
+        .reset-filters-button {
+            font-family: 'Courier New', monospace;
+            padding: 4px 10px;
+            font-size: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #000000;
+            background-color: #C0C0C0;
+            border: 2px outset #FFFFFF;
+            border-bottom-color: #808080;
+            border-right-color: #808080;
+            cursor: pointer;
+            margin-top: 8px;
+            display: inline-block;
+            float: right;
+        }
+
+        .reset-filters-button:hover {
+            background-color: #D0D0D0;
+        }
+
+        .reset-filters-button:active {
+            border-style: inset;
+            border-color: #808080;
+            border-bottom-color: #FFFFFF;
+            border-right-color: #FFFFFF;
+            transform: translateY(1px);
         }
     </style>
 </head>
@@ -228,9 +417,66 @@
             <div class="menu-item"><a href="#">Help</a></div>
         </div>
 
+         <!-- Toggle Filter Button -->
+        <button class="toggle-filter-button" onclick="toggleFilterSection()">Filters</button>
+
+        <!-- Filter Box -->
+        <div class="filter-box" id="filter-box">
+            <table>
+                <tr>
+                    <td>
+                        <label for="manufacturer-filter">Manufacturer:</label>
+                        <div id="manufacturer-filter">
+                            <label><input type="checkbox" value="beechcraft"> Beechcraft</label>
+                            <label><input type="checkbox" value="cessna"> Cessna</label>
+                            <label><input type="checkbox" value="other"> Other</label>
+                        </div>
+                    </td>
+                    <td>
+                        <label for="year-filter">Year Range:</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="number" id="min-year-filter" placeholder="Min Year" min="1970" max="2025">
+                            <input type="number" id="max-year-filter" placeholder="Max Year" min="1970" max="2025">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="price-filter">Price Range:</label>
+                        <div id="price-filter">
+                            <label><input type="checkbox" value="0-500000"> < $500,000</label>
+                            <label><input type="checkbox" value="500000-1000000"> $500,000 - $1,000,000</label>
+                            <label><input type="checkbox" value="1000000-2000000"> $1,000,000 - $2,000,000</label>
+                            <label><input type="checkbox" value="2000000-5000000"> $2,000,000 - $5,000,000</label>
+                            <label><input type="checkbox" value="5000000-10000000"> $5,000,000 - $10,000,000</label>
+                            <label><input type="checkbox" value="10000000-20000000"> $10,000,000 - $20,000,000</label>
+                        </div>
+                    </td>
+                    <td>
+                        <label for="location-filter">Location:</label>
+                        <input type="text" id="location-filter" placeholder="Location">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="condition-filter">Condition:</label>
+                        <div id="condition-filter">
+                            <label><input type="checkbox" value="new"> New</label>
+                            <label><input type="checkbox" value="used"> Used</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- Buttons -->
+            <div style="margin-top: 10px; display: flex; gap: 10px;">
+                <button class="apply-filters-button" onclick="applyFilters()">Apply Filters</button>
+                <button class="reset-filters-button" onclick="resetFilters()">Reset</button>
+            </div>
+        </div>
+
         <!-- Aircraft listings -->
         <div class="aircraft-listing">
-            <div class="aircraft-item">
+            <div class="aircraft-item" data-manufacturer="beechcraft" data-year="2010" data-price="2400000" data-condition="used" data-location="Winston-Salem, North Carolina">
                 <div class="aircraft-name">2010 BEECHCRAFT PREMIER IA</div>
                 <p class="aircraft-price">USD $2,400,000</p>
                 <div class="carousel">
@@ -318,7 +564,7 @@ AHRS: Dual Collins AHC-3000</li>
             </div>
             </div>
             <!-- Add more aircraft items as needed -->
-            <div class="aircraft-item">
+            <div class="aircraft-item" data-manufacturer="cessna" data-year="2001" data-price="2495000" data-condition="used" data-location="Austin, Texas">
                 <div class="aircraft-name">2001 CESSNA CITATION BRAVO</div>
                 <p class="aircraft-price">USD $2,495,000</p>
                 <div class="carousel">
@@ -387,9 +633,9 @@ The information contained herein was obtained from the aircraft permanent record
 
                 </div>
             </div>
-            
+
             <!-- Add more aircraft items as needed -->
-            <div class="aircraft-item">
+            <div class="aircraft-item" data-manufacturer="beechcraft" data-year="2003" data-price="2075000" data-condition="used" data-location="Amarillo, Texas">
                 <div class="aircraft-name">2003 BEECHCRAFT BEECHJET 400A</div>
                 <p class="aircraft-price">USD $2,075,000</p>
                 <div class="carousel">
@@ -452,12 +698,7 @@ The information contained herein was obtained from the aircraft permanent record
 
                 </div>
             </div>
-            
-            
-            
-            
-            
-            
+
 </div>
 </div>
 
@@ -489,8 +730,70 @@ The information contained herein was obtained from the aircraft permanent record
             const details = document.getElementById(id);
             details.style.display = details.style.display === 'block' ? 'none' : 'block';
         }
+
+        // Toggle filter section visibility
+        function toggleFilterSection() {
+            const filterBox = document.getElementById('filter-box');
+            filterBox.style.display = filterBox.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Apply filters functionality
+        function applyFilters() {
+            const manufacturerFilters = document.querySelectorAll('#manufacturer-filter input[type="checkbox"]:checked');
+            const minYear = document.getElementById('min-year-filter').value;
+            const maxYear = document.getElementById('max-year-filter').value;
+            const priceFilters = document.querySelectorAll('#price-filter input[type="checkbox"]:checked');
+            const locationFilter = document.getElementById('location-filter').value.toLowerCase();
+            const conditionFilters = document.querySelectorAll('#condition-filter input[type="checkbox"]:checked');
+
+            const items = document.querySelectorAll('.aircraft-item');
+
+            items.forEach(item => {
+                const manufacturer = item.getAttribute('data-manufacturer');
+                const year = item.getAttribute('data-year');
+                const price = item.getAttribute('data-price');
+                const location = item.getAttribute('data-location').toLowerCase();
+                const condition = item.getAttribute('data-condition');
+
+                const manufacturerMatch = manufacturerFilters.length === 0 || Array.from(manufacturerFilters).some(filter => filter.value === manufacturer);
+                const yearMatch = (minYear === '' || year >= minYear) && (maxYear === '' || year <= maxYear);
+                const priceMatch = priceFilters.length === 0 || Array.from(priceFilters).some(filter => {
+                    const [min, max] = filter.value.split('-');
+                    return price >= min && price <= max;
+                });
+                const locationMatch = locationFilter === '' || location.includes(locationFilter);
+                const conditionMatch = conditionFilters.length === 0 || Array.from(conditionFilters).some(filter => filter.value === condition);
+
+                if (manufacturerMatch && yearMatch && priceMatch && locationMatch && conditionMatch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Reset filters functionality
+        function resetFilters() {
+            document.querySelectorAll('#manufacturer-filter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.getElementById('min-year-filter').value = '';
+            document.getElementById('max-year-filter').value = '';
+            document.querySelectorAll('#price-filter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.getElementById('location-filter').value = '';
+            document.querySelectorAll('#condition-filter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            const items = document.querySelectorAll('.aircraft-item');
+            items.forEach(item => {
+                item.style.display = 'block';
+            });
+        }
     </script>
-    
+
     <script>
 document.querySelectorAll('.carousel img').forEach(img => {
     img.addEventListener('click', function() {
