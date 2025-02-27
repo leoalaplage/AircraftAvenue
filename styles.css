@@ -416,5 +416,7 @@ body {
 }
 
 
-
+.logo {
+         height: 300px; /* Ajustez la taille selon vos besoins */
+}
 
