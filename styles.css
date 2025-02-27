@@ -43,7 +43,6 @@ body {
 @media (max-width: 300px) {
     .logo {
         width: 30vw; /* Ajustez la largeur pour les petits écrans */
-        margin-right: 5px; /* Réduisez l'espace pour les petits écrans */
     }
 
 
