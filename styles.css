@@ -28,7 +28,17 @@ body {
     font-size: 35px;
     font-weight: bold;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.logo {
+    width: auto; /* Ajustez la largeur selon vos besoins */
+    height: 50px; /* Ajustez la hauteur selon vos besoins */
+    margin-right: 10px; /* Espace entre le logo et le texte */
+}
+
 
 /* Menu bar */
 .menu-bar {
