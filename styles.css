@@ -34,16 +34,8 @@ body {
 }
 
 .logo {
-    width: 15vw; /* Utilisez une unité relative */
-    height: auto; /* Maintenez le ratio d'aspect */
-    max-width: 300px; /* Limitez la taille maximale */
+         height: 300px; /* Ajustez la taille selon vos besoins */
 }
-
-/* Media Query for Mobile Devices */
-@media (max-width: 300px) {
-    .logo {
-        width: 30vw; /* Ajustez la largeur pour les petits écrans */
-    }
 
 
 /* Menu bar */
