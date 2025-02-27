@@ -414,3 +414,15 @@ body {
     border-right-color: #FFFFFF;
     transform: translateY(1px);
 }
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 40px; /* Ajustez la taille selon vos besoins */
+    margin-right: 10px; /* Espace entre le logo et le texte */
+}
+
