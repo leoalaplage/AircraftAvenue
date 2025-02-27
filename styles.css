@@ -71,7 +71,7 @@ body {
 
 .aircraft-name {
     font-weight: bold;
-    color: #000080;
+    color: #1E4C7C;
 }
 
 .aircraft-details {
@@ -171,7 +171,7 @@ body {
     text-align: center;
     text-decoration: none;
     color: #FFFFFF;
-    background: linear-gradient(to right, #000080, #0000FF);
+    background: #1E4C7C;
     border: 2px outset #FFFFFF;
     border-bottom-color: #808080;
     border-right-color: #808080;
@@ -183,7 +183,7 @@ body {
 }
 
 .retro-button:hover {
-    background: linear-gradient(to right, #0000A0, #2020FF);
+    background: #1E4C7C;
 }
 
 .retro-button:active {
@@ -216,7 +216,7 @@ body {
 }
 
 .filter-header {
-    background: linear-gradient(to right, #000080, #0000FF);
+    background: #1E4C7C;
     color: white;
     font-family: 'arial', monospace;
     padding: 4px 6px;
@@ -303,7 +303,7 @@ body {
     text-align: center;
     text-decoration: none;
     color: #FFFFFF;
-    background: linear-gradient(to right, #000080, #0000FF);
+    background: #1E4C7C;
     border: 2px outset #FFFFFF;
     border-bottom-color: #808080;
     border-right-color: #808080;
@@ -314,7 +314,7 @@ body {
 }
 
 .toggle-filter-button:hover {
-    background: linear-gradient(to right, #0000A0, #2020FF);
+    background: #1E4C7C;
 }
 
 .toggle-filter-button:active {
@@ -333,7 +333,7 @@ body {
     text-align: center;
     text-decoration: none;
     color: #FFFFFF;
-    background: linear-gradient(to right, #000080, #0000FF);
+    background: #1E4C7C;
     border: 2px outset #FFFFFF;
     border-bottom-color: #808080;
     border-right-color: #808080;
@@ -344,7 +344,7 @@ body {
 }
 
 .apply-filters-button:hover {
-    background: linear-gradient(to right, #0000A0, #2020FF);
+    background: #1E4C7C;
 }
 
 .apply-filters-button:active {
