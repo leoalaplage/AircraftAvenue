@@ -34,8 +34,8 @@ body {
 }
 
 .logo {
-    width: auto; /* Ajustez la largeur selon vos besoins */
-    height: 50px; /* Ajustez la hauteur selon vos besoins */
+    width: 90px; /* Ajustez la largeur selon vos besoins */
+    height: 80px; /* Ajustez la hauteur selon vos besoins */
     margin-right: 10px; /* Espace entre le logo et le texte */
 }
 
