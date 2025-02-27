@@ -24,6 +24,7 @@ body {
     align-items: center;
     justify-content: center; /* Centre le logo */
     padding: 10px;
+    border: 1px solid #000000;
     background-color: #FFFFFF; /* Ajuste selon ton design */
 }
 
