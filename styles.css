@@ -24,19 +24,11 @@ body {
     background: linear-gradient(to right, #000080, #0000FF);
     color: white;
     font-family: 'arial', monospace;
-    padding: 8px;
-    font-size: 35px;
+    padding: 6px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
-.logo {
-         height: 300px; /* Ajustez la taille selon vos besoins */
-}
-
 
 /* Menu bar */
 .menu-bar {
