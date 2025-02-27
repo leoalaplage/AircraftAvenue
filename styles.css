@@ -19,15 +19,12 @@ body {
     margin: 0 auto;
 }
 
-/* Title bar */
 .title-bar {
-    background: #FFFFFF;
-    color: white;
-    font-family: 'arial', monospace;
-    padding: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le logo */
+    padding: 10px;
+    background-color: #FFFFFF; /* Ajuste selon ton design */
 }
 
 /* Menu bar */
@@ -416,7 +413,19 @@ body {
 }
 
 
+
+
 .logo {
-         height: 170px; /* Ajustez la taille selon vos besoins */
+    max-width: 100%;
+    height: auto;
+    max-height: 170px; /* Taille maximale sur grand écran */
 }
+
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+    .logo {
+        max-height: 100px; /* Réduit la taille sur mobile */
+    }
+}
+
 
