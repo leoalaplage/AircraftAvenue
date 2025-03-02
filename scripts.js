@@ -140,3 +140,4 @@ function sortByPrice() {
     document.querySelector('.sort-price-button').textContent = isAscending ? 'Sort by Price (Low to High)' : 'Sort by Price (High to Low)';
 }
 
+
