@@ -38,7 +38,6 @@ function applyFilters() {
     const yearFilter = document.getElementById('year-filter').value;
     const priceFilter = document.getElementById('price-filter').value;
     const locationFilter = document.getElementById('location-filter').value.toLowerCase();
-    const conditionFilters = document.querySelectorAll('#condition-filter input[type="checkbox"]:checked');
 
     const items = document.querySelectorAll('.aircraft-item');
 
@@ -47,15 +46,13 @@ function applyFilters() {
         const year = parseInt(item.getAttribute('data-year'), 10);
         const price = parseFloat(item.getAttribute('data-price').replace(/[^\d.]/g, ''));
         const location = item.getAttribute('data-location').toLowerCase();
-        const condition = item.getAttribute('data-condition');
 
         const manufacturerMatch = manufacturerFilters.length === 0 || Array.from(manufacturerFilters).some(filter => filter.value === manufacturer);
         const yearMatch = yearFilter === '' || checkYearRange(year, yearFilter);
         const priceMatch = priceFilter === '' || checkPriceRange(price, priceFilter);
-        const locationMatch = locationFilter === '' || (locationFilter === 'europe' && location.includes('europe')) || (locationFilter === 'usa' && location.includes('usa'));
-        const conditionMatch = conditionFilters.length === 0 || Array.from(conditionFilters).some(filter => filter.value === condition);
+        const locationMatch = locationFilter === '' || location === locationFilter;
 
-        if (manufacturerMatch && yearMatch && priceMatch && locationMatch && conditionMatch) {
+        if (manufacturerMatch && yearMatch && priceMatch && locationMatch) {
             item.style.display = 'block';
         } else {
             item.style.display = 'none';
@@ -83,9 +80,6 @@ function resetFilters() {
     document.getElementById('year-filter').value = '';
     document.getElementById('price-filter').value = '';
     document.getElementById('location-filter').value = '';
-    document.querySelectorAll('#condition-filter input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
 
     const items = document.querySelectorAll('.aircraft-item');
     items.forEach(item => {
@@ -93,46 +87,42 @@ function resetFilters() {
     });
 }
 
+// Fullscreen image functionality
 document.querySelectorAll('.carousel img').forEach(img => {
     img.addEventListener('click', function() {
-        // Create the full-screen overlay if it doesn't exist
         let overlay = document.querySelector('.fullscreen-overlay');
         if (!overlay) {
             overlay = document.createElement('div');
             overlay.className = 'fullscreen-overlay';
             document.body.appendChild(overlay);
 
-            // Add a close button
             const closeButton = document.createElement('span');
             closeButton.className = 'close-button';
             closeButton.innerHTML = '&times;';
             overlay.appendChild(closeButton);
 
-            // Close the overlay when the close button is clicked
             closeButton.addEventListener('click', function() {
                 overlay.style.display = 'none';
-                overlay.innerHTML = ''; // Clear the image
+                overlay.innerHTML = '';
             });
         }
 
-        // Display the clicked image in the overlay
         overlay.innerHTML = `<img src="${this.src}" alt="Fullscreen Image">`;
         overlay.style.display = 'flex';
 
-        // Add the close button back to the overlay
         const closeButton = document.createElement('span');
         closeButton.className = 'close-button';
         closeButton.innerHTML = '&times;';
         overlay.appendChild(closeButton);
 
-        // Close the overlay when the close button is clicked
         closeButton.addEventListener('click', function() {
             overlay.style.display = 'none';
-            overlay.innerHTML = ''; // Clear the image
+            overlay.innerHTML = '';
         });
     });
 });
 
+// Sort by price functionality
 function sortByPrice() {
     const aircraftListing = document.querySelector('.aircraft-listing');
     const items = Array.from(aircraftListing.querySelectorAll('.aircraft-item'));
@@ -144,10 +134,9 @@ function sortByPrice() {
         return isAscending ? priceA - priceB : priceB - priceA;
     });
 
-    // Re-attach sorted items to the DOM
     items.forEach(item => aircraftListing.appendChild(item));
 
-    // Toggle the sorting order
     aircraftListing.classList.toggle('sort-ascending', !isAscending);
     document.querySelector('.sort-price-button').textContent = isAscending ? 'Sort by Price (Low to High)' : 'Sort by Price (High to Low)';
 }
+
