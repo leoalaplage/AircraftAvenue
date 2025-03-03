@@ -69,6 +69,12 @@ body {
     border-bottom: none;
 }
 
+.aircraft-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre le titre et le badge */
+}
+
 .aircraft-name {
     font-weight: bold;
     color: #1E4C7C;
@@ -417,18 +423,14 @@ body {
 
 /* Premium Listing Badge */
 .premium-badge {
-    background: linear-gradient(to right, #000080, #0000FF);
+    background: #A62B17;
     color: white;
     font-family: 'arial', monospace;
     padding: 4px 8px;
-    font-size: 12px;
+    border-radius: 5px;
+    font-size: 13px;
     font-weight: bold;
-    border: 2px outset #FFFFFF;
-    border-bottom-color: #808080;
-    border-right-color: #808080;
     display: inline-block;
-    margin-top: 5px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -437,7 +439,7 @@ body {
 .logo {
     max-width: 100%;
     height: auto;
-    max-height: 170px; /* Taille maximale sur grand écran */
+    max-height: 180px; /* Taille maximale sur grand écran */
 }
 
 /* Adaptation pour mobile */
