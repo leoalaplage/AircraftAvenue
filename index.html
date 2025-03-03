@@ -834,15 +834,27 @@ Second FMS/GPS/DME</li>
     </div>
 
     <script src="scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
-        function partagerLien(id) {
-            const url = window.location.origin + window.location.pathname + '#' + id;
-            navigator.clipboard.writeText(url).then(() => {
-                alert("Lien copié : " + url);
-            });
-        }
-        </script>
+function partagerLien(id) {
+    const url = window.location.origin + window.location.pathname + '#' + id;
+
+    if (navigator.share) {
+        // Si l'API Web Share est disponible (Mobile)
+        navigator.share({
+            title: document.querySelector(`#${id} h2`).innerText,
+            text: "Regarde cette annonce sur Aircraft Avenue !",
+            url: url
+        }).then(() => console.log("Lien partagé avec succès"))
+          .catch((error) => console.log("Erreur lors du partage :", error));
+    } else {
+        // Sinon, copier le lien dans le presse-papiers
+        navigator.clipboard.writeText(url).then(() => {
+            alert("Lien copié : " + url);
+        });
+    }
+}
+</script>
+
         
 
 </body>
