@@ -104,7 +104,7 @@
             <div class="aircraft-item" id="beechcraft-1" data-manufacturer="beechcraft" data-year="2010" data-price="2400000" data-condition="used" data-location="usa">
                 <div class="aircraft-name">2010 BEECHCRAFT PREMIER IA</div>
                 <p class="aircraft-price">USD $2,400,000</p>
-                <button class="retro-button" onclick="shareAircraft('beechcraft-1')">Share</button>
+                <button onclick="partagerLien('beechcraft-1')">Share</button>
 
                 <div class="carousel">
                     <img src="https://media.sandhills.com/img.axd?id=9040622028&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUwkefTYPcFWHpFIKEKoHFrd5pYyZ5ljqXc%3d" alt="Cessna 172 Skyhawk 1" class="active">
@@ -835,41 +835,15 @@ Second FMS/GPS/DME</li>
 
     <script src="scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script>function shareAircraft(aircraftId) {
-        const aircraftElement = document.getElementById(aircraftId);
-        if (!aircraftElement) {
-        console.error('Element not found:', aircraftId);
-        return;
-    }
-    
-        // Utiliser HTML2Canvas pour capturer l'élément
-        html2canvas(aircraftElement).then(canvas => {
-            // Convertir le canvas en une image Blob
-            canvas.toBlob(blob => {
-                const filesArray = [
-                    new File([blob], 'aircraft-annonce.png', {
-                        type: blob.type,
-                    })
-                ];
-    
-                const shareData = {
-                    files: filesArray,
-                    title: 'Check out this aircraft!',
-                    text: 'I found this amazing aircraft for sale!',
-                };
-    
-                // Vérifier si l'API de partage est disponible
-                if (navigator.canShare && navigator.canShare(shareData)) {
-                    navigator.share(shareData)
-                        .then(() => console.log('Successful share'))
-                        .catch(error => console.log('Error sharing', error));
-                } else {
-                    console.log('Sharing not supported on this browser');
-                }
+    <script>
+        function partagerLien(id) {
+            const url = window.location.origin + window.location.pathname + '#' + id;
+            navigator.clipboard.writeText(url).then(() => {
+                alert("Lien copié : " + url);
             });
-        });
-    }
-    </script>
+        }
+        </script>
+        
 
 </body>
 </html>
