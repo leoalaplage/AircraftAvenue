@@ -835,25 +835,31 @@ Second FMS/GPS/DME</li>
 
     <script src="scripts.js"></script>
     <script>
-function partagerLien(id) {
-    const url = window.location.origin + window.location.pathname + '#' + id;
+        function partagerLien(id) {
+            console.log("Bouton cliqué pour :", id);  // Test de debug
+        
+            const url = window.location.origin + window.location.pathname + '#' + id;
+        
+            if (navigator.share) {
+                navigator.share({
+                    title: document.querySelector(`#${id} h2`).innerText,
+                    text: "Regarde cette annonce sur Aircraft Avenue !",
+                    url: url
+                }).then(() => console.log("Lien partagé avec succès"))
+                  .catch((error) => console.log("Erreur lors du partage :", error));
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert("Lien copié : " + url);
+                    console.log("Lien copié :", url);
+                }).catch((error) => console.log("Erreur de copie :", error));
+            }
+        }
+        </script>
+        
+        
 
-    if (navigator.share) {
-        // Si l'API Web Share est disponible (Mobile)
-        navigator.share({
-            title: document.querySelector(`#${id} h2`).innerText,
-            text: "Regarde cette annonce sur Aircraft Avenue !",
-            url: url
-        }).then(() => console.log("Lien partagé avec succès"))
-          .catch((error) => console.log("Erreur lors du partage :", error));
-    } else {
-        // Sinon, copier le lien dans le presse-papiers
-        navigator.clipboard.writeText(url).then(() => {
-            alert("Lien copié : " + url);
-        });
-    }
-}
-</script>
+</body>
+</html>
 
         
 
