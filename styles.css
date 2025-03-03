@@ -62,7 +62,6 @@ body {
 
 .aircraft-item {
     border-bottom: 1px solid #000000;
-    padding: 10px 0;
 }
 
 .aircraft-item:last-child {
@@ -72,16 +71,19 @@ body {
 .aircraft-header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
     gap: 10px; /* Espace entre le titre et le badge */
 }
 
 .aircraft-name {
     font-weight: bold;
+    margin-top: 10px;
+    white-space: nowrap; /* Empêche le titre de se couper */
     color: #1E4C7C;
 }
 
 .aircraft-details {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .aircraft-price {
@@ -428,8 +430,10 @@ body {
     font-family: 'arial', monospace;
     padding: 4px 8px;
     border-radius: 5px;
-    font-size: 13px;
+    margin-top: 10px;
+    font-size: 12px;
     font-weight: bold;
+    flex-shrink: 0; /* Empêche le badge de se réduire */
     display: inline-block;
 }
 
