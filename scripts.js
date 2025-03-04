@@ -39,6 +39,7 @@ function applyFilters() {
     const yearFilter = document.getElementById('year-filter').value;
     const priceFilter = document.getElementById('price-filter').value;
     const locationFilter = document.getElementById('location-filter').value.toLowerCase();
+    const premiumFilter = document.getElementById('premium-filter').checked;
 
     const items = document.querySelectorAll('.aircraft-item');
 
@@ -47,13 +48,15 @@ function applyFilters() {
         const year = parseInt(item.getAttribute('data-year'), 10);
         const price = parseFloat(item.getAttribute('data-price').replace(/[^\d.]/g, ''));
         const location = item.getAttribute('data-location').toLowerCase();
+        const isPremium = item.getAttribute('data-premium') === 'true';
 
         const manufacturerMatch = manufacturerFilters.length === 0 || Array.from(manufacturerFilters).some(filter => filter.value === manufacturer);
         const yearMatch = yearFilter === '' || checkYearRange(year, yearFilter);
         const priceMatch = priceFilter === '' || checkPriceRange(price, priceFilter);
         const locationMatch = locationFilter === '' || location === locationFilter;
+        const premiumMatch = !premiumFilter || isPremium;
 
-        if (manufacturerMatch && yearMatch && priceMatch && locationMatch) {
+        if (manufacturerMatch && yearMatch && priceMatch && locationMatch && premiumMatch) {
             item.style.display = 'block';
         } else {
             item.style.display = 'none';
@@ -75,18 +78,30 @@ function checkPriceRange(price, range) {
 
 // Reset filters functionality
 function resetFilters() {
+    // Reset manufacturer filters
     document.querySelectorAll('#manufacturer-filter input[type="checkbox"]').forEach(checkbox => {
         checkbox.checked = false;
     });
+
+    // Reset year filter
     document.getElementById('year-filter').value = '';
+
+    // Reset price filter
     document.getElementById('price-filter').value = '';
+
+    // Reset location filter
     document.getElementById('location-filter').value = '';
 
+    // Reset premium filter
+    document.getElementById('premium-filter').checked = false;
+
+    // Show all items
     const items = document.querySelectorAll('.aircraft-item');
     items.forEach(item => {
         item.style.display = 'block';
     });
 }
+
 
 // Fullscreen image functionality
 document.querySelectorAll('.carousel img').forEach(img => {
@@ -159,5 +174,6 @@ function sortByPrice() {
             phoneNumber.style.display = "none"; // Masquer
         }
     }
+
 
 
