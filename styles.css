@@ -456,6 +456,13 @@ body {
     }
 }
 
+.phone-number {
+    display: none; /* Caché par défaut */
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+
 
 
 
