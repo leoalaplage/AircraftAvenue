@@ -53,19 +53,6 @@
                     </td>
 
                     <td>
-
-                        <label for="year-filter">Year Range:</label>
-                        <select id="year-filter">
-                            <option value="">All</option>
-                            <option value="1970-1980">1970-1980</option>
-                            <option value="1981-1990">1981-1990</option>
-                            <option value="1991-2000">1991-2000</option>
-                            <option value="2001-2010">2001-2010</option>
-                            <option value="2011-2020">2011-2020</option>
-                            <option value="2021-2025">2021-2025</option>
-                        </select>
-                        
-                        <br><br>
                         <label for="price-filter">Price Range:</label>
                         <select id="price-filter">
                             <option value="">All</option>
@@ -76,6 +63,18 @@
                             <option value="5000000-10000000">$5,000,000 - $10,000,000</option>
                             <option value="10000000-20000000">$10,000,000 - $20,000,000</option>
                             <option value="20000000-90000000">More than $20,000,000</option>
+                        </select>
+                        
+                        <br><br>
+                        <label for="year-filter">Year Range:</label>
+                        <select id="year-filter">
+                            <option value="">All</option>
+                            <option value="1970-1980">1970-1980</option>
+                            <option value="1981-1990">1981-1990</option>
+                            <option value="1991-2000">1991-2000</option>
+                            <option value="2001-2010">2001-2010</option>
+                            <option value="2011-2020">2011-2020</option>
+                            <option value="2021-2025">2021-2025</option>
                         </select>
 
                         <br><br>
@@ -136,7 +135,7 @@
                     <p><b> Aircraft Location:</b> Winston-Salem, North Carolina</p>
                 </div>
                 <button class="retro-button" onclick="toggleDetails('cessna-172-details')">More Details</button>
-                <button class="retro-button" onclick="window.location.href='mailto:seller1@example.com?subject=Inquiry%20about%202010%20BEECHCRAFT%20PREMIER%20IA'">Contact Seller</button>
+                <button class="retro-button" onclick="window.location.href='https://www.carolinajet.com/contact'">Contact Seller</button>
                 <div id="cessna-172-details" class="additional-details">
                     <p><b> Description:</b> Recent Windshields, A & B Inspections by Textron Service Center GSO January 2025, TAP Elite, Electronic Charts, XM Weather and much more.  Call today to find out more about this excellent Premier IA.</p>
                     <p><b>Total Time:</b> 3,345</p>
@@ -200,8 +199,11 @@ AHRS: Dual Collins AHC-3000</li>
             <!-- Add more aircraft items as needed -->
             <div class="aircraft-item" id="cessna-1" data-manufacturer="cessna" data-year="2001" data-price="2495000" data-condition="used" data-location="usa">
                 <button class="sort-price-button" onclick="partagerLien('cessna-1')">Share</button>
-                <div class="aircraft-name">2001 CESSNA CITATION BRAVO</div>
-                <p class="aircraft-price">USD $2,495,000</p>
+<div class="aircraft-header">
+    <div class="aircraft-name">2001 CESSNA CITATION BRAVO</div>
+    <div class="premium-badge">Premium Listing</div>
+</div>
+<p class="aircraft-price">USD $2,495,000</p>
                 <div class="carousel">
                     <img src="https://media.sandhills.com/img.axd?id=9041610605&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=mJpV%2fzp0ac5Nanvtiiw1KF0Nc4mSbTi3NVqcHNvwdv4%3d" alt="Cessna 172 Skyhawk 1" class="active">
                     <img src="https://media.sandhills.com/img.axd?id=9041610538&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=%2bq4NxUmucFXFfFUPoofIKR5nY1nG7%2bcP03XMvwG%2bi%2bs%3d" alt="Cessna 172 Skyhawk 2">
@@ -221,7 +223,7 @@ AHRS: Dual Collins AHC-3000</li>
                     <p><b> Aircraft Location:</b> Austin, Texas, USA</p>
                 </div>
                 <button class="retro-button" onclick="toggleDetails('cessna-173-details')">More Details</button>
-                <button class="retro-button" onclick="window.location.href='mailto:seller2@example.com?subject=Inquiry%20about%202001%20CESSNA%20CITATION%20BRAVO'">Contact Seller</button>
+                <button class="retro-button" onclick="window.location.href='https://www.austinaircraftsales.com/contact/'">Contact Seller</button>
                 <div id="cessna-173-details" class="additional-details">
                     <p><b> Description:</b> This aircraft is the personal transportation for the man who owned Aeromil Pacific which for years was the Cessna Citation Service Center for Australia.  He takes exceptional pride in this low time aircraft and has maintained and operated it in absolutely pristine condition.  It is only offered for sale because his current requirements now demand an aircraft with different operating parameters.  The aircraft is currently undergoing a Phase 5 inspection and could be delivered on the US Registry should the new owner desire that.  The current owner has been a personal friend for over forty years and I can vouch for the fact that absolutely everything Steve Padgett owns or operates is absolutely first class.</p>
                     <p><b>Total Time:</b> 3,303</p>
@@ -344,7 +346,236 @@ The information contained herein was obtained from the aircraft permanent record
 
 
 
+ <!-- Add more aircraft items as needed -->
+ <div class="aircraft-item" id="citationcx" data-manufacturer="cessna" data-year="2009" data-price="6200000" data-condition="used" data-location="usa">
+    <button class="sort-price-button" onclick="partagerLien('citationcx')">Share</button>
+    <div class="aircraft-name">2009 CESSNA CITATION X</div>
+    <p class="aircraft-price">USD $6,200,000</p>
+    <div class="carousel">
+        <img src="https://media.sandhills.com/img.axd?id=9039966244&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=K3Ijq0vlJmrwMxuaKTZ8BP3vcmU%2fQ0oJJn628b91GyI%3d" alt="citationcx Skyhawk 1" class="active">
+        <img src="https://media.sandhills.com/img.axd?id=9039966241&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=K3Ijq0vlJmpIt8KrF1bTO0EFXoVMkpAqRYMzpRGL4bg%3d" alt="citationcx 172 Skyhawk 2">
+        <img src="https://media.sandhills.com/img.axd?id=9039966248&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=K3Ijq0vlJmpmvA8Wz1ckwszTLVKu9NepCz6vDhDChnQ%3d" alt="citationcx 172 Skyhawk 3">
+        <img src="https://media.sandhills.com/img.axd?id=9039966239&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=K3Ijq0vlJmozDbRHymR%2bkVn4CP5Em2XoM0SNeWTV0mY%3d" alt="citationcx 172 Skyhawk 4">
+        <img src="https://media.sandhills.com/img.axd?id=9039966262&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=K3Ijq0vlJmqRVGejuOkdtEHwGGn7%2bC4mMZg1V926RUk%3d" alt="citationcx 172 Skyhawk 5">
+        <img src="https://media.sandhills.com/img.axd?id=9039966234&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=K3Ijq0vlJmrRLSw6I57aOP0fACVI0K3xig0qmVuKLLM%3d" alt="citationcx 172 Skyhawk 6">
+        <img src="https://media.sandhills.com/img.axd?id=9039966271&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=K3Ijq0vlJmrVHAzjH2Im12QZ9t%2buJHrzJz8qUAP1jhw%3d" alt="citationcx 172 Skyhawk 6">
 
+        <button class="carousel-nav prev">&#10094;</button>
+        <button class="carousel-nav next">&#10095;</button>
+    </div>
+    <div class="aircraft-details">
+        <p><b> Manufacturer:</b>  CESSNA</p>
+        <p><b> Year:</b> 2009</p>
+        <p><b> Model:</b> CITATION X</p>
+        <p><b> Serial Number:</b> 750-0299</p>
+        <p><b> Registration:</b> N299CX</p>
+        <p><b> Aircraft Location:</b> Columbus, Ohio, USA</p>
+    </div>
+    <button class="retro-button" onclick="toggleDetails('citationcx-details')">More Details</button>
+    <button class="retro-button" onclick="window.location.href='https://qspartners.com/brokerage'">Contact Seller</button>
+    <div id="citationcx-details" class="additional-details">
+        <p><b> Description:</b> <ul>
+            <li>One Owner</li>
+            <li>Primus Elite Cockpit Upgrade</li>
+            <li>Rolls-Royce CorporateCare</li>
+            <li>Gogo Avance L5 Wi-Fi</li>
+            <li>Aircell Axxess II Satcom With Text and Talk</li>
+            <li>110V Cabin Power</li>
+            <li>2022 Paint</li>
+        </ul>
+        </p>
+        <p><b>Total Time:</b> 7,290</p>
+        <p><b>Total Landings:</b> 4,321</p>
+        <p><b>Engines:</b> ROLLS ROYCE AE3007C1</p>
+        <p><b>Engine 1 Time (SNEW):</b> 7,290</p>
+        <p><b>Engine 2 Time (SNEW):</b> 7,290</p>
+        <p><b>Engine 1 Cycles (SNEW):</b> 4,321</p>
+        <p><b>Engine 2 Cycles (SNEW):</b> 4,321</p>
+        <p><b>Engines Maintenance Program:</b> CorporateCare</p>
+        <p><b>APU Time (SNEW):</b> 4,412</p>
+
+        <p><b>Avionics/Radios:</b> <ul>
+            <li>Honeywell Primus Elite Upgrade (SB750-34-55 R02)</li>
+            <li>5-Tube With Dual EICAS Flight Director Systems With 8x7-Inch</li>
+            <li>DU-875 Electronic Flight Displays</li>
+            <li>Dual Honeywell AZ-940 Air Data Computers</li>
+            <li>Dual Honeywell AV-850A Control Panels</li>
+            <li>Dual Honeywell AT-860 ADF</li>
+            <li>Honeywell Primus 2000 ADF Autopilot/Flight Director</li>
+            <li>L3 FA2100 CVR (120 Minutes)</li>
+            <li>Honeywell CD-830 FMS Control Display Unit</li>
+            <li>Dual Honeywell TR-833 Com Transceivers (8.33 MHz Spacing)</li>
+            <li>DATA LOADER: Honeywell DL-1000 Data Base Loader</li>
+            <li>Dual Honeywell DM-850 Modules DMEs</li>
+            <li>Artex C406-N 3-Frequency ELT</li>
+            <li>Honeywell GC-810 FGC</li>
+            <li>FDR: Provisions</li>
+            <li>Dual Honeywell FMZ-2000 FMS With 6.1 Software</li>
+            <li>Dual Honeywell HG2021GD04 GPS Sensor Units</li>
+            <li>Dual Honeywell HF 1050 High Frequency Radio</li>
+            <li>Dual Honeywell RCZ-833M Integrated Comm Units</li>
+            <li>Dual Honeywell HG2001GD03 Inertial Reference Units</li>
+            <li>NAVIGATION: Dual Honeywell NV-850 NAV Receivers (With FM Immunity)</li>
+            <li>Honeywell Primus WU-880 Weather Radar Transceiver</li>
+            <li>Honeywell RT-300 Radio Altimeter</li>
+            <li>Dual Honeywell RM-855 RMUs</li>
+            <li>SELCAL: Avtech CSD-714 SELCAL Decoder</li>
+            <li>Honeywell Mark V EGPWS With Wind Shear Detection</li>
+            <li>Honeywell (Bendix/King) TCAS 2000 Version 7.1</li>
+            <li>Dual Honeywell XS-857A Enhanced Mode S Transponders</li>
+            <li>ADS-B Out</li>
+            <li>WAAS</li>
+        </ul>        
+        </p>
+
+        <p><b>Additional Equipment:</b> 
+            <ul>
+                <li>Crane Aerospace SmartStem Tire Pressure Monitoring System</li>
+                <li>Bose Headset Audio Jacks</li>
+                <li>Dual Type C USB Ports in Cockpit</li>
+                <li>ACA Air Ionizer Installation</li>
+                <li>Gogo Biz 4G ATG</li>
+                <li>SL 750-57-07 R01 Completed</li>
+            </ul>
+            
+            </p>
+
+       <p><b>Interior Notes:</b>
+        <ul>
+            <li>8-Passenger Double Club Configuration</li>
+            <li>FWD Righthand Galley With Hot/Cold Liquid</li>
+            <li>Waterfall Bubinga Woodwork Fully Refinished in 2022</li>
+            <li>Window Reveals (2022)</li>
+            <li>Lower Sidewalls (2024)</li>
+            <li>Carpet (2017)</li>
+        </ul>
+        
+        <ul>
+            <li>Gogo Biz 4G ATG</li>
+            <li>Gogo Avance L5 Wi-Fi</li>
+            <li>DVD Player</li>
+            <li>Aircell Axxess II SatCom With 3 Handsets Plus Text and Talk</li>
+            <li>110V Cabin Power</li>
+            <li>USB Charging Ports</li>
+            <li>Airshow 400</li>
+        </ul>
+        
+    </p>
+    </div>
+</div>
+
+
+
+ <!-- Add more aircraft items as needed -->
+ <div class="aircraft-item" id="challenger300" data-manufacturer="bombardier" data-year="2014" data-price="13950000" data-condition="used" data-location="usa">
+    <button class="sort-price-button" onclick="partagerLien('challenger300')">Share</button>
+    <div class="aircraft-name">2014 BOMBARDIER CHALLENGER 300</div>
+    <p class="aircraft-price">USD $13,950,000</p>
+    <div class="carousel">
+        <img src="https://media.sandhills.com/img.axd?id=9038554521&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=oRcZblO1gp9Hxzn9LkPvlG8jjAtkTXSH83j5tW4oC%2fg%3d" alt="challenger300 Skyhawk 1" class="active">
+        <img src="https://media.sandhills.com/img.axd?id=9038554503&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=oRcZblO1gp9p6oTtyLRbSS4fkvU%2fT9ddGqK877sNc9M%3d" alt="challenger300 172 Skyhawk 2">
+        <img src="https://media.sandhills.com/img.axd?id=9038554512&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=oRcZblO1gp9bQU52rnXah6SleCaGN7gKZkxlaZk9w30%3d" alt="challenger300 172 Skyhawk 3">
+        <img src="https://media.sandhills.com/img.axd?id=9038554481&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=oNkyKL8hoac261Oi3SlR2uCs9kxdXBwaOPsDlkghXLw%3d" alt="challenger300 172 Skyhawk 4">
+        <img src="https://media.sandhills.com/img.axd?id=9038554567&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=oRcZblO1gp%2bVdk7409Go4l34AjeSxJJ%2b9zeprPiZT1w%3d" alt="challenger300 172 Skyhawk 5">
+        <img src="https://media.sandhills.com/img.axd?id=9038554571&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=oRcZblO1gp9hJGdNNQGwPd%2bSEcs%2fnm%2bJwhkaTu2H1fA%3d" alt="challenger300 172 Skyhawk 6">
+        <img src="https://media.sandhills.com/img.axd?id=9038554532&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=oRcZblO1gp9HuqA4qhxmZiW%2bHnKcQQUNewCUzzXiQnQ%3d" alt="challenger300 172 Skyhawk 6">
+
+        <button class="carousel-nav prev">&#10094;</button>
+        <button class="carousel-nav next">&#10095;</button>
+    </div>
+    <div class="aircraft-details">
+        <p><b> Manufacturer:</b>  BOMBARDIER</p>
+        <p><b> Year:</b> 2014</p>
+        <p><b> Model:</b> CHALLENGER 300</p>
+        <p><b> Serial Number:</b> 20450</p>
+        <p><b> Registration:</b> N99MR</p>
+        <p><b> Aircraft Location:</b> Columbus, Ohio, USA</p>
+    </div>
+    <button class="retro-button" onclick="toggleDetails('challenger300-details')">More Details</button>
+    <button class="retro-button" onclick="window.location.href='https://qspartners.com/brokerage'">Contact Seller</button>
+    <div id="challenger300-details" class="additional-details">
+        <p><b> Description:</b>
+            <p>QS Partners is excited to present Challenger 300 SN 20450 to the market. This aircraft is immediately available, based at KLIT, and comes with the below highlights:</p>
+            
+            <ul>
+                <li>U.S. Ownership Pedigree</li>
+                <li>Maintained by Bombardier and West Star Aviation</li>
+                <li>MSP Engines and APU</li>
+                <li>CASP Avionics</li>
+                <li>Rockwell Collins Pro Line 21 Advanced Avionics</li>
+                <li>FANS 1/A+</li>
+                <li>Synthetic Vision System</li>
+                <li>XM Weather on MFD and Enhanced XM Weather</li>
+                <li>Activation of the Enhanced Map Overlays</li>
+                <li>Universal Weather on MFD</li>
+                <li>ADS-B V2</li>
+            </ul>
+            
+        </p>
+        <p><b>Total Time:</b> 3,361</p>
+        <p><b>Total Landings:</b> 2,090</p>
+        <p><b>Engines:</b> HONEYWELL HTF7000</p>
+        <p><b>Engine 1 Time (SNEW):</b> 3,361</p>
+        <p><b>Engine 2 Time (SNEW):</b> 3,361</p>
+        <p><b>Engine 1 Cycles (SNEW):</b> 2,090</p>
+        <p><b>Engine 2 Cycles (SNEW):</b> 2,090</p>
+        <p><b>Engines Maintenance Program:</b> MSP Gold</p>
+        <p><b>APU Time (SNEW):</b> 1,237</p>
+        <p><b>APU Maintenance Program:</b> MSP Gold</p>
+
+
+        <p><b>Avionics/Radios:</b> <ul>
+            <li>Collins ProLine 21 Advanced System</li>
+            <li>Four (4) Tube AFD-5220E EFIS/MFD Displays</li>
+            <li>Dual ADC-3000 Air Data Computers</li>
+            <li>Dual AHC-3000 AHRS Computers</li>
+            <li>Dual FGC-3002 Flight Guidance Computers</li>
+            <li>DCU-5000 Data Concentrator Unit</li>
+            <li>File Server Unit FSU-5010 With IFIS</li>
+            <li>Second File Server (SB 100-46-01)</li>
+            <li>Engine Instrument/Crew Alerting System (EICAS)</li>
+            <li>ALT-4000 Radio Altimeter</li>
+            <li>Dual NAV-4000/4500 With ADF</li>
+            <li>Dual DME-4000</li>
+            <li>Triple VHF-4000 Comm Units With 8.33 MHz</li>
+            <li>MultiScan Weather Radar RTA-4114</li>
+            <li>Dual FMC-6200 FMS</li>
+            <li>Dual GPS-4000S GPS With WAAS/LPV</li>
+            <li>DBU-5010E Dataloader</li>
+            <li>TSS-4100 Integrated TCAS, Transponder, and ADS-B TSS (ADS-BV2)</li>
+            <li>TCAS II</li>
+            <li>Dual Collins TDR-94D Transponder Mode S</li>
+            <li>Honeywell MK V EGPWS</li>
+            <li>Dual HF-9000 HF With SELCAL</li>
+        </ul>        
+        </p>
+
+        <p><b>Additional Equipment:</b> 
+            <ul>
+                <li>Airshow 4000 Display</li>
+                <li>FWD and AFT 20-Inch Bulkhead Monitors</li>
+                <li>ATG 5000 Wi-Fi</li>
+                <li>DVD/CD Player</li>
+            </ul>
+            
+            
+            </p>
+
+       <p><b>Interior Notes:</b>
+        <ul>
+            <li>Microwave Oven</li>
+            <li>Two (2) Mapco Hot Liquid Storage Units</li>
+            <li>Service Panel Lighting System</li>
+            <li>Six (6) 115 VAC Outlets</li>
+            <li>Six (6) Reclining Seats</li>
+            <li>3-Place Birthable Divan</li>
+            <li>Internally Accessible AFT Storage With 750-Pound Capacity</li>
+        </ul>
+        
+        
+    </p>
+    </div>
+</div>
 
 
                       <!-- Add more aircraft items as needed -->
@@ -353,8 +584,8 @@ The information contained herein was obtained from the aircraft permanent record
                         <div class="aircraft-name">2020 CIRRUS VISION SF50-G2</div>
                         <p class="aircraft-price">USD $2,749,000</p>
                         <div class="carousel">
-                            <img src="https://media.sandhills.com/img.axd?id=9043716379&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=0J43VjGLQ38li6AIBuXxruDB7NbHTWU9yilLvyPbPZY%3d" alt="cirrus Skyhawk 1" class="active">
-                            <img src="https://media.sandhills.com/img.axd?id=9043716375&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=0J43VjGLQ39r5NTe2qTD1fhOTHt7Fx6EiDikyOgfsdw%3d" alt="cirrus 172 Skyhawk 2">
+                            <img src="https://media.sandhills.com/img.axd?id=9043716375&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=0J43VjGLQ39r5NTe2qTD1fhOTHt7Fx6EiDikyOgfsdw%3d" alt="cirrus 172 Skyhawk 2" class="active">
+                            <img src="https://media.sandhills.com/img.axd?id=9043716379&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=0J43VjGLQ38li6AIBuXxruDB7NbHTWU9yilLvyPbPZY%3d" alt="cirrus Skyhawk 1" >
                             <img src="https://media.sandhills.com/img.axd?id=9043716380&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=0J43VjGLQ3%2bA1q0vilZao6HTC9nPaLMidsCglMVDsS4%3d" alt="cirrus 172 Skyhawk 3">
                             <img src="https://media.sandhills.com/img.axd?id=9043716385&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=0J43VjGLQ399GWa7iAUEBIMp1P0llNlTIO4GKhLSTB8%3d" alt="cirrus 172 Skyhawk 4">
                             <img src="https://media.sandhills.com/img.axd?id=9043717010&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Phm0cf4z0q%2bsOUjV5lS6Zyrl%2fcxPjvd18u9R3cf2MXk%3d" alt="cirrus 172 Skyhawk 5">
@@ -479,110 +710,6 @@ The information contained herein was obtained from the aircraft permanent record
                         </p>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-                        <!-- Add more aircraft items as needed -->
-                        <div class="aircraft-item" id="hawker-1" data-manufacturer="hawker" data-year="2009" data-price="4200000" data-condition="used" data-location="usa">
-                            <button class="sort-price-button" onclick="partagerLien('hawker-1')">Share</button>
-                            <div class="aircraft-name">2009 HAWKER 4000</div>
-                            <p class="aircraft-price">USD $4,200,000</p>
-                            <div class="carousel">
-                                <img src="https://media.sandhills.com/img.axd?id=9042223883&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Z2akeCpsEl0kbYyGorXr8XdFvGSrY1X0LTq6wLS40K0%3d" alt="hawker 172 Skyhawk 1" class="active">
-                                <img src="https://media.sandhills.com/img.axd?id=9041781221&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=s%2bJS8J2kI%2bOA5heBxrcfroTV6upLvYUnFX6PsFuPn8k%3d" alt="hawker 172 Skyhawk 2">
-                                <img src="https://media.sandhills.com/img.axd?id=9042223902&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=xnUQU2SXeZVRwOhI097iQv81ZxqdquxRJ7Np%2bl1RfgU%3d" alt="hawker 172 Skyhawk 3">
-                                <img src="https://media.sandhills.com/img.axd?id=9042223886&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Z2akeCpsEl2eb1rn%2bf0uhK5xBSDVyiA6mKuTFVGefco%3d" alt="hawker 172 Skyhawk 4">
-                                <img src="https://media.sandhills.com/img.axd?id=9042223885&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Z2akeCpsEl0qt%2fzZbd122I05gU1R4aKQBNtQ7bqBxxc%3d" alt="hawker 172 Skyhawk 5">
-                                <img src="https://media.sandhills.com/img.axd?id=9042223881&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Z2akeCpsEl00%2bAQh2dGRSaMPgFx%2f3R3Yb7RpBi08P08%3d" alt="hawker 172 Skyhawk 6">
-                                <img src="https://media.sandhills.com/img.axd?id=9042223882&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Z2akeCpsEl3fwJPgdMlU6mB34ZMO3JCmThRqED5VxSE%3d" alt="hawker 172 Skyhawk 7">
-
-                                <button class="carousel-nav prev">&#10094;</button>
-                                <button class="carousel-nav next">&#10095;</button>
-                            </div>
-                            <div class="aircraft-details">
-                                <p><b> Manufacturer:</b>  HAWKER</p>
-                                <p><b> Year:</b> 2009</p>
-                                <p><b> Model:</b> 4000</p>
-                                <p><b> Serial Number:</b> RC-29</p>
-                                <p><b> Registration:</b> N319SG</p>
-                                <p><b> Aircraft Location:</b> Miami, Florida, USA</p>
-                            </div>
-                            <button class="retro-button" onclick="toggleDetails('hawker-173-details')">More Details</button>
-                            <button class="retro-button" onclick="window.location.href='https://www.controller.com/listings/for-sale/atlantic-aviation-group-inc/aircraft?DSCompanyID=87494'">Contact Seller</button>
-                            <div id="hawker-173-details" class="additional-details">
-                                <p><b> Description:</b> Atlantic Aviation Group, Inc. is proud to exclusively present this impeccably maintained, hangar-kept 2009 Hawker 4000 with CPDLC-FANS 1/A+ which offers exceptional value and reliability with no known damage history, complete logbooks, and all maintenance performed through Textron Aviation. This airplane has been carefully overseen by Atlantic Aviation Group, Inc. to ensure the highest standards of care. Please reach out to us directly for our brochure, status report, and for the 3D Virtual Tour Link for this airplane.</p>
-                                <p><b>Total Time:</b> 3,029</p>
-                                <p><b>Total Landings:</b> 1,320</p>
-                                <p><b>Engines:</b> PRATT & WHITNEY PW308A</p>
-                                <p><b>Engines TBO:</b> 6,000</p>
-                                <p><b>Engine 1 Time (SNEW):</b> 3,029</p>
-                                <p><b>Engine 2 Time (SNEW):</b> 2,865</p>
-                                <p><b>Engine 1 Cycles (SNEW):</b> 1,320</p>
-                                <p><b>Engine 2 Cycles (SNEW):</b> 1,254</p>
-                                <p><b>Engines Maintenance Program:</b> ESP Gold</p>
-                                <p><b>APU:</b> Honeywell GTCP-36-150</p>
-                                <p><b>APU Time:</b> 1,450</p>
-                                <p><b>APU Maintenance Program:</b> MSP Gold</p>
-                                <p><b>Avionics/Radios:</b> <ul>
-                                    <li>Honeywell Primus EPIC Avionic Suite w/ 5 8” x 10” LCD Screens</li>
-                                    <li>Collins HF-9000 High Frequency Transceiver</li>
-                                    <li>Dual Honeywell RNZ-850 NAV’s</li>
-                                    <li>Dual Honeywell 24 Channel GPS Receivers</li>
-                                    <li>Honeywell RNZ-850 DME’s</li>
-                                    <li>Dual Honeywell RCZ-851E Diversity Mode S Transponders</li>
-                                    <li>Dual Honeywell Laseref V IRS</li>
-                                    <li>Dual Honeywell Primus Epic integrated FMS’s</li>
-                                    <li>Honeywell Dual Full Authority Auto Throttles</li>
-                                    <li>FA2100 Cockpit Voice Recorder</li>
-                                    <li>Primus 880 Turbulence Detection Weather Radar</li>
-                                    <li>Honeywell AA-300 Radio Altimeter</li>
-                                    <li>Artex C406-2 ELT</li>
-                                    <li>Honeywell Mark V EGPWS</li>
-                                    <li>Aircell ST3100 Iridium Phone System</li>
-                                    <li>Dual Chart Data Server</li>
-                                    <li>ADSB Out Compliant</li>
-                                    <li>CPDLC</li>
-                                </ul></p>
-            
-                                <p><b>Additional Equipment:</b> 
-                                    <ul>
-                                        <li>Aircell ATG-5000 WiFi</li>
-                                        <li>Elementary / Enhanced Transponder Upgrade</li>
-                                        <li>Forward Cabin Pocket Doors</li>
-                                        <li>Long Range Oxygen</li>
-                                        <li>Portable Oxygen Bottle in Cabin</li>
-                                        <li>Cockpit Floor Storage Compartment</li>
-                                        <li>Emergency Visual Assurance System</li>
-                                        <li>RVSM Capable</li>
-                                        <li>Two 110 VAC Outlets in Cockpit</li>
-                                        <li>Collins Airshow 4000</li>
-                                        <li>Dual CD/DVD Player</li>
-                                        <li>Second 15” Cabin LCD Display</li>
-                                        <li>Audio / Video Jacks for Video Gaming System</li>
-                                        <li>Personal Cabin Entertainment Controls at each Cabin Chair</li>
-                                    </ul>
-                                    </p>
-            
-                               <p><b>Interior Notes:</b> Tan Leather Seats, Tan Carpet, Matching Fabric Sidewalls, Mahogany High Gloss Veneer. Eight (8)
-                                pedestal based swiveling cabin chairs arranged in a double club arrangement. Forward RH Galley
-                                Forward LH storage cabient, Aft LH storage cabinet. Equipped with a belted lavatory and LED 
-                                Cabin Lighting.</li></p>
-
-                               <p><b>Inspection Status:</b> 
-                                <ul>
-                                <li>Block Point Inspections / Load 20 Mod-Output Completed</li>
-                                <li>Thrust Reverser SB (78-4091) was fully complied with December 2013</li>
-                                <li>Both PDA’s are at G Mod</li>
-                                </ul></p>
-
-            
-                            </div>
-                        </div>
 
 
 
@@ -854,214 +981,6 @@ The information contained herein was obtained from the aircraft permanent record
                     </p>
                 </div>
             </div>
-
-
-
-            <!-- Add more aircraft items as needed -->
-<div class="aircraft-item" id="gulfstream-1" data-manufacturer="gulfstream" data-year="2001" data-price="3950000" data-condition="used" data-location="canada">
-    <button class="sort-price-button" onclick="partagerLien('gulfstream-1')">Share</button>
-    <div class="aircraft-name">2001 GULFSTREAM G200</div>
-    <p class="aircraft-price">USD $3,950,000</p>
-    <div class="carousel">
-        <img src="https://media.sandhills.com/img.axd?id=8033191988&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fdkUgU2SOHsJwjVh3Bhoan2FNak0IH071Q%3d" alt="cessna-1733 1" class="active">
-        <img src="https://media.sandhills.com/img.axd?id=8033191990&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fdKmQKQuCkPALpe9tp67Yg19PWkN%2f4ZjZ8%3d" alt="cessna-1733 2">
-        <img src="https://media.sandhills.com/img.axd?id=8033191986&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fe9WT%2fpkBwa3Fwl%2fet9g9uZcmQ2SXd3wHA%3d" alt="cessna-1733 3">
-        <img src="https://media.sandhills.com/img.axd?id=8033191975&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fc79hrqtkc0hmf%2f5JkcrC88cTm1GkBoJs8%3d" alt="cessna-1733 4">
-        <img src="https://media.sandhills.com/img.axd?id=8033191981&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fdoiL%2fWyUHe2vgXcHkF3aLreUiuiVaS8gs%3d" alt="cessna-1733 5">
-        <button class="carousel-nav prev">&#10094;</button>
-        <button class="carousel-nav next">&#10095;</button>
-    </div>
-    <div class="aircraft-details">
-        <p><b> Manufacturer:</b> GULFSTREAM</p>
-        <p><b> Year:</b> 2001</p>
-        <p><b> Model:</b> G200</p>
-        <p><b> Serial Number:</b> 048</p>
-        <p><b> Registration:</b> C-GRST</p>
-        <p><b> Aircraft Location:</b> London, Ontario, Canada</p>
-    </div>
-    <button class="retro-button" onclick="toggleDetails('cessna-1733-details')">More Details</button>
-    <button class="retro-button" onclick="window.location.href='https://www.aerosmithpenny.com/contact.htm'">Contact Seller</button>
-    <div id="cessna-1733-details" class="additional-details">
-        <p><b> Description:</b> Fresh 5000 Cycle Inspection West Star</p>
-        <p><b>Total Time:</b> 6,558</p>
-        <p><b>Total Landings:</b> 5,013</p>
-        <p><b>Engines:</b> PRATT & WHITNEY PW306A</p>
-        <p><b>Engines TBO:</b> 6,000</p>
-        <p><b>Engine 1 Time (SNEW):</b> 6,092</p>
-        <p><b>Engine 2 Time (SNEW):</b> 6,428</p>
-        <p><b>Engine 1 Cycles (SNEW):</b> 4,679</p>
-        <p><b>Engine 2 Cycles (SNEW):</b> 4,920</p>
-        <p><b>Engine Maintenance Program:</b> ESP Gold</p>
-        <p><b>APU:</b> Garrett GTCP 36-150(IAI) -MSP</p>
-        <p><b>APU Time:</b> 4,085</p>
-        <p><b>APU Maintenance Program:</b> MSP</p>
-        <p><b>Avionics/Radios:</b>
-            <ul>
-                <li>Proline 4</li>
-                <li>ADF: Collins ADF-462</li>
-                <li>AHRS: Dual Collins AHS-85E</li>
-                <li>Autopilot: Dual Collins FCC-4005</li>
-                <li>Comm Radios: Dual Collins VHF-422D W/8.33 KHZ</li>
-                <li>Cockpit Voice Recorder: Universal CVR-30B</li>
-                <li>DME: Dual Collins DME-442</li>
-                <li>EFIS: Collins EFD-4077 5-Tube</li>
-                <li>FMS: Dual Universal UNS-1C+</li>
-                <li>GPS System: Garmin</li>
-                <li>HI Frequency: Dual Honeywell HF-950 W/Selcal</li>
-                <li>Navigation Radios: Dual Collins VIR-432 W/FM Immunity</li>
-                <li>Radar Altimeter: Collins ALT-4000</li>
-                <li>Satcom: Thrane & Thrane Aviator 300</li>
-                <li>TAWS: Honeywell Mark V EGPWS</li>
-                <li>TCAS II: Collins TCAS-94 W/Change 7.1</li>
-                <li>Transponders X2: Dual Collins TDR-94D W/ Flight ID</li>
-                <li>Weather Radar: Collins WXR-850</li>
-                <li>Flight Data Recorder: Removed - Loose Equipment</li>
-            </ul>
-        </p>
-        <p><b>Interior Notes:</b> 9 Passenger, LIGHT BEIGE LEATHER SEATING, FOUR FORWARD SINGLE CLUB SEATS, DUAL AFT SINGLE SEATS OPPOSITE 3-PLACE BERTHABLE DIVAN, JUMPSEAT, RIGHT SIDE FORWARD GALLEY, MICROWAVE & COFFEEMAKER QUARTER FIGURED ETIMOE WOOD, LED LIGHTING, AIRCELL GOGO BIZ W/ ATG-5000 HIGH-SPEED INTERNET</p>
-        <p><b>Inspection Status:</b>
-            <ul>
-                <li>MSG-3 192 - C/W 2018</li>
-                <li>Aircraft currently operated under the IFA (increased flight activity) program.</li>
-            </ul>
-        </p>
-    </div>
-</div>
-
-            <!-- Add more aircraft items as needed -->
-            <div class="aircraft-item" id="cessna-3" data-manufacturer="cessna" data-year="2015" data-price="6950000" data-condition="used" data-location="europe">
-                <button class="sort-price-button" onclick="partagerLien('cessna-3')">Share</button>
-                <div class="aircraft-name">2015 CESSNA CITATION CJ4</div>
-                <p class="aircraft-price">USD $6,950,000</p>
-                <div class="carousel">
-                    <img src="https://media.sandhills.com/img.axd?id=9009617967&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1uEx1nOWOdPgn17Kv0sRz%2frzAkSZDitDAU%3d" alt="Cessna 172 Skyhawk 1" class="active">
-                    <img src="https://media.sandhills.com/img.axd?id=9009617972&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1vQceoJjxtj8p9LqwLg9GjXCUik85QYiHA%3d" alt="Cessna 172 Skyhawk 2">
-                    <img src="https://media.sandhills.com/img.axd?id=9009617963&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1ug3A1GE7O7YpQu4CbSQC0X4gSAtoq2lDo%3d" alt="Cessna 172 Skyhawk 3">
-                    <img src="https://media.sandhills.com/img.axd?id=9009617982&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1uuIjTyGE85rITdDlpVpoRjUHMCBqlFrqY%3d" alt="Cessna 172 Skyhawk 4">
-                    <img src="https://media.sandhills.com/img.axd?id=9009617959&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1uaXAuQvrvIqZblTVKiD8jfbBrn2MDV92A%3d" alt="Cessna 172 Skyhawk 5">
-                    <button class="carousel-nav prev">&#10094;</button>
-                    <button class="carousel-nav next">&#10095;</button>
-                </div>
-                <div class="aircraft-details">
-                    <p><b> Manufacturer:</b>  CESSNA</p>
-                    <p><b> Year:</b> 2015</p>
-                    <p><b> Model:</b> CITATION CJ4</p>
-                    <p><b> Serial Number:</b> 525C-0200</p>
-                    <p><b> Registration:</b> 2-THCL</p>
-                    <p><b> Aircraft Location:</b> Southampton, England, United Kingdom</p>
-                </div>
-                <button class="retro-button" onclick="toggleDetails('cessna-178-details')">More Details</button>
-                <button class="retro-button" onclick="window.location.href='mailto:seller2@example.com?subject=Inquiry%20about%202001%20CESSNA%20CITATION%20CJ2'">Contact Seller</button>
-                <div id="cessna-178-details" class="additional-details">
-                    <p><b> Description:</b> Textron Aviation is pleased to present this 2015 Citation CJ4 on behalf of the aircraft owner.</p>
-                    <p><b>Total Time:</b> 486</p>
-                    <p><b>Total Landings:</b> 928</p>
-                    <p><b>Engines:</b> Williams International FJ44-4A</p>
-                    <p><b>Engines TBO:</b> 5,000</p>
-                    <p><b>Engine 1 Time (SNEW):</b> 486</p>
-                    <p><b>Engine 2 Time (SNEW):</b> 486</p>
-                    <p><b>Engine 1 Cycles (SNEW):</b> 928</p>
-                    <p><b>Engine 2 Cycles (SNEW):</b> 928</p>
-                    <p><b>Avionics/Radios:</b> <ul><li>Pro Line 21 Integrated Avionics Suite</li>
-<li>Pro Line 21 Radios with dual COM, Dual NAV, Dual Digital Audio Control Panels</li>
-<li>Single Collins DME-4000</li>
-<li>Dual Collins Mode S Diversity Transponders with Enhanced Surveillance with ADS-B Out</li>
-<li>Collins FMS 3000</li>
-<li>Collins GPS 4000 with WAAS</li>
-<li>Collins Multi-Scan RTA-4112 Weather Radar</li>
-<li>L-3 Communications FA2100 Cockpit Voice Recorder</li>
-<li>Collins TSS-4100 (TCAS II)</li>
-<li>Mark VIII Class A TAWS</li>
-<li>Artex C406N 3-Frequency ELT</li>
-<li>Integrated Pulselight System</li>
-<li>Electronic Charts (requires subscription)</li></ul></p>
-
-                    <p><b>Additional Equipment
-:</b> <ul><li>
-Second FMS/GPS/DME</li>
-<li>Data Link with Textual Weather</li>
-<li>FA2100 FDR</li></ul></p>
-
-                   <p><b>Exterior - Year Painted:</b> 2015</p>
-                   <p><b>Interior - Year Interior:</b> 2015</p>
-                   <p><b>Interior Notes:</b> Cabin Seating for 7 Passengers. (Six Cabin Seats and Right-Hand Forward Side-Facing seat) <ul><li>Left-Hand Forward Refreshment Center</li>
-<li>Left-Hand Belted Flushing Toilet (externally serviceable)</li>
-<li>Left-Hand Forward Refreshment Center</li>
-<li>Right-Hand Forward Cabinet with Single Side Facing Seat</li>
-<li>10.6” Monitor in RH Forward Cabinet</li>
-<li>Venue Cabin Management System</li>
-<li>Iridium Axxess II Phone System</li>
-<li>Executive & Slimline Tables</li>
-<li>110 VAC Outlets</li></ul></p>
-                </div>
-            </div>
-
-            <!-- Add more aircraft items as needed -->
-            <div class="aircraft-item" id="beechcraft-2" data-manufacturer="beechcraft" data-year="2003" data-price="2075000" data-condition="used" data-location="usa">
-                <button class="sort-price-button" onclick="partagerLien('beechcraft-2')">Share</button>
-                <div class="aircraft-name">2003 BEECHCRAFT BEECHJET 400A</div>
-                <p class="aircraft-price">USD $2,075,000</p>
-                <div class="carousel">
-                    <img src="https://media.sandhills.com/img.axd?id=9037133870&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOdxb8ylxD0R9TIDP6vGQp8Q7tANoKaypL0%3d" alt="Cessna 174 Skyhawk 1" class="active">
-                    <img src="https://media.sandhills.com/img.axd?id=9037133873&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOeO3Y%2bpPD8OnBMvFQ2M2w7Jrhpev3l5Po0%3d" alt="Cessna 174 Skyhawk 2">
-                    <img src="https://media.sandhills.com/img.axd?id=9037133876&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOfEaOtSNfZgnd25wf%2fE6tQlxoMBzlxdKtw%3d" alt="Cessna 174 Skyhawk 3">
-                    <img src="https://media.sandhills.com/img.axd?id=9037133878&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOeczGgnfxluiB%2bLkr4ySmnEU%2bR7dJzQlVM%3d" alt="Cessna 174 Skyhawk 4">
-                    <img src="https://media.sandhills.com/img.axd?id=9037133879&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOeZblWPA9V5LqxpkBA%2bDf3Ae%2bMFVf3lxH0%3d" alt="Cessna 174 Skyhawk 5">
-                    <img src="https://media.sandhills.com/img.axd?id=9037133882&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOdagL5SOY8ZSH8X9RIG8hW6foqi3Q%2fDJ3E%3d" alt="Cessna 174 Skyhawk 6">
-                    <img src="https://media.sandhills.com/img.axd?id=9037133888&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOet0Z8fewEF8ccIo6UU8pCJ44yWT73Cf9E%3d" alt="Cessna 174 Skyhawk 7">
-                    <button class="carousel-nav prev">&#10094;</button>
-                    <button class="carousel-nav next">&#10095;</button>
-                </div>
-                <div class="aircraft-details">
-                    <p><b> Manufacturer:</b>  BEECHCRAFT</p>
-                    <p><b> Year:</b> 2003</p>
-                    <p><b> Model:</b> BEECHJET 400A</p>
-                    <p><b> Serial Number:</b> RK-349</p>
-                    <p><b> Registration:</b> N349FJ</p>
-                    <p><b> Aircraft Location:</b> Amarillo, Texas</p>
-                </div>
-                <button class="retro-button" onclick="toggleDetails('cessna-171-details')">More Details</button>
-                <button class="retro-button" onclick="window.location.href='mailto:travis@havenaero.com?subject=Inquiry%20about%202003%20BEECHCRAFT%20BEECHJET%20400A'">Contact Seller</button>
-                <div id="cessna-171-details" class="additional-details">
-                    <p><b> Description:</b> FAA FAR Part 135 current aircraft!</p>
-                    <p><b>Total Time:</b> 4,866</p>
-                    <p><b>Total Landings:</b> 3,839</p>
-                    <p><b>Engines:</b> PRATT & WHITNEY JT15D-5</p>
-                    <p><b>Engines TBO:</b> 3,500</p>
-                    <p><b>Engine 1 Time (SNEW):</b> 4,765</p>
-                    <p><b>Engine 2 Time (SNEW):</b> 4,765</p>
-                    <p><b>Engine 1 Cycles (SNEW):</b> 3,757</p>
-                    <p><b>Engine 2 Cycles (SNEW):</b> 3,757</p>
-                    <p><b>Engine 1 Time (SOH):</b> 1,311</p>
-                    <p><b>Engine 2 Time (SOH):</b> 1,311</p>
-                    <p><b>Engine 1 Cycles (SOH):</b> 1,119</p>
-                    <p><b>Engine 2 Cycles (SOH):</b> 1,119</p>
-                    <p><b>Avionics/Radios:</b> <ul><li>Flight Management System 1: Collins AMS5000</li>
-<li>Flight Management System 2: Collins AMS5000</li>
-<li>VOR X2: Collins VIR432</li>
-<li>DME X2: Collins DME442</li>
-<li>GPS System: Collins 4000S</li>
-<li>Transponders X2: Collins TDR-94D</li>
-<li>Autopilot: Collins APS-4000</li>
-<li>Cockpit Voice Recorder: L-3 FA2100</li>
-<li>TAWS: Honeywell 965-0976-040-208-208</li>
-<li>Radar: Collins RTA-854</li>
-<li>TCAS II: Collins TTR-4000</li>
-<li>WiFi: GoGo ATG5000</li>
-<li>Flite Phone: AirCell ST3100</li></ul></p>
-
-                   <p><b>Inspection Status:</b> <ul><li>Aircraft status tracked via FlightDocs</li>
-<li>Aircraft currently operated under the IFA (increased flight activity) program.</li>
-<li>IFA-A Inspection next due: 10/31/2025 or ATT 5241.8</li>
-<li>IFA-B Inspections next due: ATT 5466.4</li>
-<li>IFA-C Inspection next due: ATT 5114.4</li>
-<li>IFA-D Inspection next due: ATT 6400</li>
-<li>Several lubrication items, engine minors and other small inspections showing on due list scheduled to be completed prior to 1/1/2025.</li>
-<li>#2 engine starter generator scheduled for replacement prior to 1/1/2025.</li></ul></p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="scripts.js"></script>
     <script>
