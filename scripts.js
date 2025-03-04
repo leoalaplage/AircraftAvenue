@@ -24,6 +24,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 function toggleDetails(id) {
     const details = document.getElementById(id);
     details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    
 }
 
 // Toggle filter section visibility
@@ -139,5 +140,24 @@ function sortByPrice() {
     aircraftListing.classList.toggle('sort-ascending', !isAscending);
     document.querySelector('.sort-price-button').textContent = isAscending ? 'Sort by Price (Low to High)' : 'Sort by Price (High to Low)';
 }
+
+        function partagerLien(id) {
+            const url = window.location.origin + window.location.pathname + '#' + id;
+            navigator.clipboard.writeText(url).then(() => {
+                alert("Link Copied");
+            });
+        }
+
+    function showPhoneNumbercitaitonm2() {
+        let phoneNumber = document.getElementById("phone-number");
+        
+        if (phoneNumber.textContent === "") {
+            phoneNumber.textContent = "Michael Hulsey / Lake Havasu City, Arizona / 📞 (702) 358-1940"; 
+            phoneNumber.style.display = "block"; // Afficher
+        } else {
+            phoneNumber.textContent = ""; 
+            phoneNumber.style.display = "none"; // Masquer
+        }
+    }
 
 
